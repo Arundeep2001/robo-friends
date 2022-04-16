@@ -4,7 +4,7 @@ import Searchbox from '../components/Searchbox.js';
 //import {robots} from './Robots.js';
 import './Roboapp.css';
 import Scroll from '../components/Scroll.js'
-
+import ErrorBoundary from '../components/ErrorBoundary.js'
 class Roboapp extends React.Component{
 	constructor(){
 		super();
@@ -37,7 +37,9 @@ onSearchChange=(event)=>{
            <h1 className='f1'>RoboFriends</h1>
            <Searchbox searchChange={this.onSearchChange} />
            <Scroll>
+           <ErrorBoundary>
            <Cardlist robots={filteredRobots}/>
+           </ErrorBoundary>
            </Scroll>
 		   </div>
 		);
